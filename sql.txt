@@ -1,0 +1,11 @@
+CREATE TABLE patient (
+    id SERIAL PRIMARY KEY,                -- Unikalny identyfikator pacjenta
+    first_name VARCHAR(100) NOT NULL,     -- Imię pacjenta
+    last_name VARCHAR(100) NOT NULL,      -- Nazwisko pacjenta
+    pesel CHAR(11) UNIQUE NOT NULL,       -- PESEL, musi być unikalny
+    birth_date DATE NOT NULL,             -- Data urodzenia w formacie RRRR-MM-DD
+    telephone VARCHAR(15) NOT NULL,       -- Numer telefonu pacjenta
+    email VARCHAR(255) UNIQUE NOT NULL,   -- Adres e-mail pacjenta, unikalny
+    created_at TIMESTAMP DEFAULT NOW(),   -- Czas utworzenia wpisu (automatyczny)
+    updated_at TIMESTAMP DEFAULT NOW()    -- Czas ostatniej aktualizacji (automatyczny)
+);

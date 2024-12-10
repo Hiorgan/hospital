@@ -64,6 +64,7 @@ const RegisterPatient: React.FC = () => {
         console.log(res2);
 
         if (res2.error) {
+            console.error("Error inserting patient data:", res2.error);
             setErrorMessage(res2.error.message);
             return;
         }
